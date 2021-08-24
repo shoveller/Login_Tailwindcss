@@ -1,0 +1,17 @@
+{
+  "scripts": {
+  "start": "run-p watch server",
+  "dev": "tailwind -i src/css/tailwind.css -o src/css/style.css",
+  "watch": "npm run build -- --watch",
+  "build": "postcss src/css/tailwind.css -o src/css/style.css",
+  "server": "live-server src --port=3000"
+  },
+  
+  "devDependencies": {
+  "autoprefixer": "^10.3.2",
+  "postcss": "^8.3.6",
+  "postcss-cli": "^8.3.1",
+  "postcss-csso": "^5.0.1",
+  "tailwindcss": "^2.2.7"
+  }
+}
