@@ -11,8 +11,8 @@ module.exports = {
         'checkbox-checked': "url('/../images/checkbox-checked.png')",
       }),
       colors: {
-        white: "#ffffff",
-        black: "#000000",
+        // white: "#ffffff",
+        // black: "#000000",
         gray1: "#333333",
         gray2: "#4f4f4f",
         gray3: "#828282",

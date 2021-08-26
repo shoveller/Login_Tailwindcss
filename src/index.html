@@ -12,25 +12,38 @@
           rel="stylesheet" />
     <link rel="stylesheet"
           href="./css/style.css" />
+
   </head>
 
   <body>
+    <!-- 라이트 / 다크 모드 토글 버튼 -->
+    <button type="button"
+            class="absolute p-4 text-gray-700 bg-gray-300 rounded-md top-5 right-5 w-[200px]"
+            onclick="toggleTheme()">
+      <span class="theme-mode">다크</span>모드 보기
+    </button>
     <!-- 전체 콘텐츠 컨테이너 -->
-    <div class="flex items-start justify-center h-screen md:items-center text-gray1">
+    <div class="flex items-start justify-center h-screen md:items-center text-gray1 dark:text-white dark:bg-gray-900"
+         style="">
 
       <!-- 데스크 탑에서 보여지게 될 로그인 콘텐츠 박스(테두리) -->
       <div class="w-full px-5 py-10 md:py-16 md:px-12 md:max-w-screen-sm md:border md:rounded-2xl md:border-gray5">
         <!-- 패스트 캠퍼스 브랜드 로고 -->
-        <h1>
+        <!-- 패스트 캠퍼스 브랜드 로고 -->
+        <h1 class="logo">
           <a href="#">
-            <img src="./images/fastcampus-logo.png"
-                 alt="fastcampus" />
+            <picture>
+              <source srcset="./images/fastcampus-logo-dark.png"
+                      media="(prefers-color-scheme: dark)">
+              <img src="./images/fastcampus-logo.png"
+                   alt="fastcampus" />
+            </picture>
           </a>
         </h1>
 
         <!-- 패스트 캠퍼스 슬로건 -->
 
-        <p class="mt-5 text-3xl text-black">
+        <p class="mt-5 text-3xl text-black dark:text-white">
           인생을 바꾸는 교육,
           <span class="block">패스트 캠퍼스.</span>
         </p>
@@ -41,7 +54,7 @@
           <fieldset>
             <legend class="sr-only">회원 로그인 폼</legend>
             <!-- 아이디 입력 서식 -->
-            <div>
+            <div class="dark:focus-within:border-8">
               <label for="userId"
                      class="sr-only">아이디</label>
               <input id="userId"
@@ -87,13 +100,15 @@
         <!-- 회원가입 링크 -->
         <p class="mt-6 text-center">
           아직 계정이 없으신가요?
-          <a class="font-bold underline text-gray1"
+          <a class="font-bold underline text-gray1 dark:text-white"
              href="#">간편 회원가입</a>
         </p>
 
       </div>
 
     </div>
+    <script defer
+            src="js/main.js"></script>
   </body>
 
 </html>
