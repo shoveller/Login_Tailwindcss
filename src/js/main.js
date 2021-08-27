@@ -1,14 +1,39 @@
 (function () {
   'use strict';
 
+  var darkScheme = '(prefers-color-scheme: dark)';
+  var isOSDarkMode = window.matchMedia && window.matchMedia(darkScheme).matches;
+
   var htmlNode = document.documentElement;
   var logo = document.querySelector('.logo');
   var logoImg = logo.querySelector('img');
-  var logoPicSrc = logo.querySelector('picture source');
+  var logoPic = logo.querySelector('picture');
+  var logoPicSrc = logoPic.querySelector('source');
+  var toggleThemeButton = document.querySelector('.toggle-theme-button');
 
-  (function saveOriginLogoImgSrc() {
-    logoImg.dataset.src = logoImg.getAttribute('src');
-  })();
+  function init() {
+    if (isOSDarkMode) {
+      toggleThemeButton.hidden = true;
+      htmlNode.classList.add('dark');
+    }
+
+    window.matchMedia(darkScheme).addEventListener('change', function(e) {
+      const theme = e.matches ? 'dark' : 'light';
+      if (theme === 'dark') {
+        toggleThemeButton.hidden = true;
+        htmlNode.classList.add('dark');
+      } else {
+        toggleThemeButton.hidden = false;
+        htmlNode.classList.remove('dark');
+      }
+    });
+
+    (function saveOriginLogoImgSrc() {
+      logoImg.dataset.src = logoImg.getAttribute('src');
+    })();
+
+    toggleThemeButton.addEventListener('click', toggleTheme);
+  }
 
   function toggleTheme() {
     htmlNode.classList.toggle('dark');
@@ -16,11 +41,14 @@
 
     if (logo.classList.contains('dark')) {
       logoImg.setAttribute('src', logoPicSrc.getAttribute('srcset'));
+      toggleThemeButton.textContent = '라이트모드 보기';
     } else {
       logoImg.setAttribute('src', logoImg.dataset.src);
+      toggleThemeButton.textContent = '다크모드 보기';
     }
   }
 
-  window.toggleTheme = toggleTheme;
+  init();
 
+  window.toggleTheme = toggleTheme;
 })();
