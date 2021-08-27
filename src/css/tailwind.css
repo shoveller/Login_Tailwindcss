@@ -7,13 +7,6 @@ body {
   font-size: 14px;
 }
 
-.input {
-  @apply w-full p-4 border rounded-md outline-none border-gray5;
-}
-.input:focus {
-  @apply border-black;
-}
-
 .auto-login:checked + label{
   @apply pl-6 bg-left bg-no-repeat bg-checkbox-checked;
-}
+} 
