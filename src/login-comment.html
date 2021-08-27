@@ -72,6 +72,7 @@
               <!-- 1. 테두리 관련 속성 / 2. 안쪽여백 / 3. 아웃라인 제거 -->
               <!-- 4. :focus 스타일 - 선색상 black / 다크모드 선색상 primary -->
               <input id="userId"
+                     name="userId"
                      class="w-full p-4 border rounded-md outline-none border-gray5 focus:border-black dark:focus:border-primary"
                      type="text"
                      placeholder="아이디"
@@ -92,6 +93,7 @@
                 }
               -->
               <input id="userPassword"
+                     name="userPassword"
                      class="w-full p-4 border rounded-md outline-none border-gray5 focus:border-black dark:focus:border-primary"
                      type="password"
                      placeholder="비밀번호"
@@ -108,7 +110,8 @@
                 <!-- 3. 가로 세로 크기 / 4. 위치 미세 조정 / 5. 배경이미지 커스텀을 위한 auto-login 클래스-->
                 <input class="absolute w-[16px] h-[16px] top-[2px] appearance-none auto-login"
                        type="checkbox"
-                       id="autoLogin" />
+                       id="autoLogin"
+                       name="autoLogin" />
                 <!-- 1. 체크박스(input)와 겹치지 않도록 왼쪽에 padding 지정 -->
                 <!-- 2. 기본 배경이미지 및 선택상태 배경이미지 커스텀 -->
                 <!-- 
