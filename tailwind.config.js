@@ -1,14 +1,15 @@
 module.exports = {
-  mode: 'jit',
-  purge: [
-    "./src/**/*.html"
-  ],
-  darkMode: 'class', // or 'media' or 'class'
+  // mode: 'jit',
+  // purge: [
+  //   "./src/**/*.html"
+  // ],
+  content: ["./src/**/*.html"],
+  darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
-      backgroundImage: theme => ({
-        'checkbox-default': "url('/../images/checkbox-default.png')",
-        'checkbox-checked': "url('/../images/checkbox-checked.png')",
+      backgroundImage: (theme) => ({
+        "checkbox-default": "url('../images/checkbox-default.png')",
+        "checkbox-checked": "url('../images/checkbox-checked.png')",
       }),
       colors: {
         // white: "#ffffff",
@@ -25,12 +26,12 @@ module.exports = {
       fontFamily: {
         sans: ["Noto Sans KR", "sans-serif"],
       },
-    }
+    },
   },
-  variants: {
-    extend: {
-      backgroundImage: ['hover'],
-    }
-  },
+  // variants: {
+  //   extend: {
+  //     backgroundImage: ["hover"],
+  //   },
+  // },
   plugins: [],
-}
+};
